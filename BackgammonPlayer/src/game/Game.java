@@ -32,6 +32,7 @@ public class Game extends javax.swing.JFrame {
     ImageIcon icons_right[];
     ImageIcon icons_left[];
     ImageIcon icons[];
+    ImageIcon board[];
     Random rand;
 
     /**
@@ -42,10 +43,14 @@ public class Game extends javax.swing.JFrame {
         initComponents();
         ThisGame = this;
         rand = new Random();
+        try {
+            board = new ImageIcon[1];
+            board[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("game/images/board.png"))).getImage().getScaledInstance(lbl_board.getWidth(), lbl_board.getHeight(), Image.SCALE_DEFAULT));
+        } catch (IOException ex) {
+            Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
-        
-        //lbl_gamer1.setIcon(icons[0]);
-        //lbl_gamer2.setIcon(icons[0]);
+        lbl_board.setIcon(board[0]);
         // resimleri döndürmek için tread aynı zamanda oyun bitiminide takip ediyor
         tmr_slider = new Thread(() -> {
             //soket bağlıysa dönsün
@@ -119,7 +124,12 @@ public class Game extends javax.swing.JFrame {
         txt_send = new java.awt.TextArea();
         txt_receive = new java.awt.TextArea();
         btn_send_message = new javax.swing.JButton();
-        lbl_backgammonBoard = new javax.swing.JLabel();
+        lbl_board = new javax.swing.JLabel();
+        lbl_nameTitle1 = new javax.swing.JLabel();
+        lbl_namePlayer1 = new javax.swing.JLabel();
+        lbl_nameTitle2 = new javax.swing.JLabel();
+        lbl_namePlayer2 = new javax.swing.JLabel();
+        lbl_yourTurn = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -147,18 +157,27 @@ public class Game extends javax.swing.JFrame {
             }
         });
 
-        lbl_backgammonBoard.setText("jLabel1");
+        lbl_nameTitle1.setText("Player 1 :");
+
+        lbl_namePlayer1.setText("Name1");
+
+        lbl_nameTitle2.setText("Player 2 :");
+
+        lbl_namePlayer2.setText("Name2");
+
+        lbl_yourTurn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lbl_yourTurn.setText("Your Turn!");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbl_backgammonBoard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
+                        .addComponent(lbl_board, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE)
+                        .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txt_send, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
                             .addComponent(txt_receive, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -167,28 +186,50 @@ public class Game extends javax.swing.JFrame {
                         .addComponent(txt_name, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btn_connect)
-                        .addGap(0, 412, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbl_nameTitle1)
+                                .addGap(18, 18, 18)
+                                .addComponent(lbl_namePlayer1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbl_nameTitle2)
+                                .addGap(18, 18, 18)
+                                .addComponent(lbl_namePlayer2)))
+                        .addGap(44, 44, 44)
+                        .addComponent(lbl_yourTurn)))
+                .addGap(11, 11, 11))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txt_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_connect))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(txt_receive, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lbl_nameTitle1)
+                                    .addComponent(lbl_namePlayer1))
+                                .addGap(10, 10, 10)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lbl_nameTitle2)
+                                    .addComponent(lbl_namePlayer2)))
+                            .addComponent(txt_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_connect)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(lbl_yourTurn)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txt_receive, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                        .addGap(223, 223, 223)
                         .addComponent(txt_send, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn_send_message))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(lbl_backgammonBoard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(87, 87, 87))
+                    .addComponent(lbl_board, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         txt_send.getAccessibleContext().setAccessibleDescription("");
@@ -256,7 +297,12 @@ public class Game extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_connect;
     public javax.swing.JButton btn_send_message;
-    public javax.swing.JLabel lbl_backgammonBoard;
+    public javax.swing.JLabel lbl_board;
+    private javax.swing.JLabel lbl_namePlayer1;
+    private javax.swing.JLabel lbl_namePlayer2;
+    private javax.swing.JLabel lbl_nameTitle1;
+    private javax.swing.JLabel lbl_nameTitle2;
+    private javax.swing.JLabel lbl_yourTurn;
     public javax.swing.JTextField txt_name;
     public java.awt.TextArea txt_receive;
     public java.awt.TextArea txt_send;
