@@ -90,6 +90,12 @@ public class SClient extends Thread{
                             //gelen metni direkt rakibe gönder
                             Server.Send(TheClient.rival, received);
                             break;
+                        case Die1:
+                            Server.Send(TheClient.rival, received);
+                            break;
+                        case Die2:
+                            Server.Send(TheClient.rival, received);
+                            break;
                         case Selected:
                             //gelen seçim yapıldı mesajını rakibe gönder
                             Server.Send(TheClient.rival, received);

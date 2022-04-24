@@ -36,9 +36,13 @@ class Listen extends Thread {
                     case RivalConnected:
                         String name = received.content.toString();
                         
-                        //Game.ThisGame.txt_rival_name.setText(name);
+                        Game.ThisGame.lbl_nameRival.setText(name);
                         //Game.ThisGame.btn_pick.setEnabled(true);
                         Game.ThisGame.btn_send_message.setEnabled(true);
+                        Game.ThisGame.btn_rollDies.setEnabled(true);
+                        Game.ThisGame.btn_endTour.setEnabled(true);
+
+                        
                         Game.ThisGame.tmr_slider.start();
                         break;
                     case Disconnect:
@@ -46,9 +50,15 @@ class Listen extends Thread {
                     case Text:
                         Game.ThisGame.txt_receive.setText(received.content.toString());
                         break;
+                    case Die1:
+                        Game.ThisGame.lbl_die1.setText(received.content.toString());
+                        break;
+                    case Die2:
+                        Game.ThisGame.lbl_die2.setText(received.content.toString());
+                        break;
                     case Selected:
-                        Game.ThisGame.RivalSelection = (int) received.content;
-
+                        //Game.ThisGame.RivalSelection = (int) received.content;
+                        Game.ThisGame.txt_receive.setText(received.content.toString());
                         break;
 
                     case Bitis:
