@@ -39,8 +39,8 @@ class Listen extends Thread {
                         Game.ThisGame.lbl_nameRival.setText(name);
                         //Game.ThisGame.btn_pick.setEnabled(true);
                         Game.ThisGame.btn_send_message.setEnabled(true);
-                        Game.ThisGame.btn_rollDies.setEnabled(true);
-                        Game.ThisGame.btn_endTour.setEnabled(true);
+                        //Game.ThisGame.btn_rollDies.setEnabled(true);
+                        //Game.ThisGame.btn_endTour.setEnabled(true);
 
                         
                         Game.ThisGame.tmr_slider.start();
@@ -58,6 +58,8 @@ class Listen extends Thread {
                         break;
                     case Selected:
                         //Game.ThisGame.RivalSelection = (int) received.content;
+                        // ENABLE YOUR TURN
+                        Game.ThisGame.makeThemEnabled();
                         Game.ThisGame.txt_receive.setText(received.content.toString());
                         break;
 

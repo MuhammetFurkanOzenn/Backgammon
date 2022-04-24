@@ -31,7 +31,19 @@ public class Game extends javax.swing.JFrame {
     // Images
     ImageIcon board[];
     Random rand;
-
+    
+    public void makeThemDisabled(){
+        lbl_yourTurn.setVisible(false);
+        
+        
+        
+    }
+    
+    public void makeThemEnabled(){
+        lbl_yourTurn.setVisible(true);
+        btn_rollDies.setEnabled(true);
+        btn_endTour.setEnabled(true);
+    }
     /**
      * Creates new form Game
      */
@@ -163,6 +175,8 @@ public class Game extends javax.swing.JFrame {
 
         lbl_yourTurn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbl_yourTurn.setText("Your Turn!");
+        lbl_yourTurn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        lbl_yourTurn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         lbl_nameRival.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
@@ -331,7 +345,7 @@ public class Game extends javax.swing.JFrame {
         // update lbldie
         lbl_die1.setText(Integer.toString(int_random1));
         lbl_die2.setText(Integer.toString(int_random2));
-        //btn_rollDies.setEnabled(false);     // set Disabled when roll dies
+        btn_rollDies.setEnabled(false);     // set Disabled when roll dies
 
         // maybe add rolling dies sound
     }//GEN-LAST:event_btn_rollDiesActionPerformed
@@ -344,6 +358,9 @@ public class Game extends javax.swing.JFrame {
             WHEN THE BUTTON CLICK, OTHER PLAYERS LOCK WILL BE TRUE
             SO THE GAME WILL BE TURNED-BASED.. BRILLIANT:)
         */
+        
+        btn_endTour.setEnabled(false);
+        makeThemDisabled();
     }//GEN-LAST:event_btn_endTourActionPerformed
 
     /**
@@ -377,6 +394,7 @@ public class Game extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Game().setVisible(true);
+                lbl_yourTurn.setVisible(false);
             }
         });
     }
@@ -392,7 +410,7 @@ public class Game extends javax.swing.JFrame {
     public javax.swing.JLabel lbl_die2;
     public javax.swing.JLabel lbl_nameRival;
     private javax.swing.JLabel lbl_rivalNameTitle;
-    private javax.swing.JLabel lbl_yourTurn;
+    public static javax.swing.JLabel lbl_yourTurn;
     public javax.swing.JTextField txt_name;
     public java.awt.TextArea txt_receive;
     public java.awt.TextArea txt_send;

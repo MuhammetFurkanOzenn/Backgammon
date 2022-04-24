@@ -170,6 +170,11 @@ public class SClient extends Thread{
                         Message msg2 = new Message(Message.Message_Type.RivalConnected);
                         msg2.content = TheClient.rival.name;
                         Server.Send(TheClient, msg2);
+                        
+                        // SEND A FLAG FOR BEGIN GAME TO SECOND PLAYER 
+                        Message msg3 = new Message(Message.Message_Type.Selected);
+                        msg3.content = TheClient.name;
+                        Server.Send(TheClient.rival, msg3);
                     }
                     //lock mekanizmasını servest bırak
                     //bırakılmazsa deadlock olur.
