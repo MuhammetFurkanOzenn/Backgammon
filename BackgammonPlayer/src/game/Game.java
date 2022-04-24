@@ -35,6 +35,10 @@ public class Game extends javax.swing.JFrame {
     
     //GAME LOGIC
     //*
+    public static int clickCounter = 0;
+    public static int die1Result;
+    public static int die2Result;
+    
     public String team;    // "b" or "w"
     public int[] arrayBlack = {-1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 3, 0, 5, 0, 0, 0, 0, 0};     // 1'st player's checkers
     public int[] arrayWhite = {-1, 0, 0, 0, 0, 0, 5, 0, 3, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2};     // 2'nd player's checkers
@@ -688,36 +692,91 @@ public class Game extends javax.swing.JFrame {
 
         btn_chs11.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs11.setEnabled(false);
+        btn_chs11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs11ActionPerformed(evt);
+            }
+        });
 
         btn_chs10.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs10.setEnabled(false);
+        btn_chs10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs10ActionPerformed(evt);
+            }
+        });
 
         btn_chs9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs9.setEnabled(false);
+        btn_chs9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs9ActionPerformed(evt);
+            }
+        });
 
         btn_chs12.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs12.setEnabled(false);
+        btn_chs12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs12ActionPerformed(evt);
+            }
+        });
 
         btn_chs8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs8.setEnabled(false);
+        btn_chs8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs8ActionPerformed(evt);
+            }
+        });
 
         btn_chs7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs7.setEnabled(false);
+        btn_chs7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs7ActionPerformed(evt);
+            }
+        });
 
         btn_chs6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs6.setEnabled(false);
+        btn_chs6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs6ActionPerformed(evt);
+            }
+        });
 
         btn_chs5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs5.setEnabled(false);
+        btn_chs5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs5ActionPerformed(evt);
+            }
+        });
 
         btn_chs4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs4.setEnabled(false);
+        btn_chs4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs4ActionPerformed(evt);
+            }
+        });
 
         btn_chs3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs3.setEnabled(false);
+        btn_chs3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs3ActionPerformed(evt);
+            }
+        });
 
         btn_chs2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs2.setEnabled(false);
+        btn_chs2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs2ActionPerformed(evt);
+            }
+        });
 
         btn_chs1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs1.setEnabled(false);
@@ -801,39 +860,94 @@ public class Game extends javax.swing.JFrame {
 
         btn_chs20.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs20.setEnabled(false);
+        btn_chs20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs20ActionPerformed(evt);
+            }
+        });
 
         btn_chs21.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs21.setEnabled(false);
+        btn_chs21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs21ActionPerformed(evt);
+            }
+        });
 
         btn_chs22.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs22.setEnabled(false);
+        btn_chs22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs22ActionPerformed(evt);
+            }
+        });
 
         btn_chs23.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs23.setEnabled(false);
+        btn_chs23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs23ActionPerformed(evt);
+            }
+        });
 
         btn_chs24.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs24.setEnabled(false);
 
         btn_chs14.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs14.setEnabled(false);
+        btn_chs14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs14ActionPerformed(evt);
+            }
+        });
 
         btn_chs15.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs15.setEnabled(false);
+        btn_chs15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs15ActionPerformed(evt);
+            }
+        });
 
         btn_chs16.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs16.setEnabled(false);
+        btn_chs16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs16ActionPerformed(evt);
+            }
+        });
 
         btn_chs13.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs13.setEnabled(false);
+        btn_chs13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs13ActionPerformed(evt);
+            }
+        });
 
         btn_chs17.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs17.setEnabled(false);
+        btn_chs17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs17ActionPerformed(evt);
+            }
+        });
 
         btn_chs18.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs18.setEnabled(false);
+        btn_chs18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs18ActionPerformed(evt);
+            }
+        });
 
         btn_chs19.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn_chs19.setEnabled(false);
+        btn_chs19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_chs19ActionPerformed(evt);
+            }
+        });
 
         lbl_noC13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbl_noC13.setText("5");
@@ -1251,27 +1365,29 @@ public class Game extends javax.swing.JFrame {
         }else if (team == "w"){
             activateButtonsWhite();
         }else{
-            System.out.println("There is something wrong mate!! Team is not b either w");     
+            System.out.println("There is something wrong mate!! Team is not black neither white..");     
         }
         
         // rand 0-6 two times
         Random rand = new Random();
         // it will return 0-5 random numbers
         int upperbound=6;
-        int int_random1 = rand.nextInt(upperbound);
+        die1Result = rand.nextInt(upperbound);
+        die1Result++;
         //Die1 
         Message msg1 = new Message(Message.Message_Type.Die1);
-        msg1.content = Integer.toString(++int_random1);    // 1-6 rnd number
+        msg1.content = Integer.toString(die1Result);    // 1-6 rnd number
         Player.Send(msg1);
         //Die1 
-        int int_random2 = rand.nextInt(upperbound);
+        die2Result = rand.nextInt(upperbound);
+        die2Result++;
         Message msg2 = new Message(Message.Message_Type.Die2);
-        msg2.content = Integer.toString(++int_random2);
+        msg2.content = Integer.toString(++die2Result);
         Player.Send(msg2);
         
         // update lbldie
-        lbl_die1.setText(Integer.toString(int_random1));
-        lbl_die2.setText(Integer.toString(int_random2));
+        lbl_die1.setText(Integer.toString(die1Result));
+        lbl_die2.setText(Integer.toString(die2Result));
         btn_rollDies.setEnabled(false);     // set Disabled when roll dies
 
         // maybe add rolling dies sound
@@ -1302,12 +1418,466 @@ public class Game extends javax.swing.JFrame {
 
     private void btn_chs1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs1ActionPerformed
         // TODO add your handling code here:
-
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs2.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs3.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs4.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs5.setEnabled(true);}
+            if (die1Result  == 5 || die2Result == 5 || die1Result + die2Result == 5){btn_chs6.setEnabled(true);}
+            if (die1Result  == 6 || die2Result == 6 || die1Result + die2Result == 6){btn_chs7.setEnabled(true);}
+            if (die1Result + die2Result == 7){btn_chs8.setEnabled(true);}
+            if (die1Result + die2Result == 8){btn_chs9.setEnabled(true);}
+            if (die1Result + die2Result == 9){btn_chs10.setEnabled(true);}
+            if (die1Result + die2Result == 10){btn_chs11.setEnabled(true);}
+            if (die1Result + die2Result == 11){btn_chs12.setEnabled(true);}
+            if (die1Result + die2Result == 12){btn_chs13.setEnabled(true);}
+        }
+        btn_chs1.setEnabled(false);
+        
+        clickCounter++;
     }//GEN-LAST:event_btn_chs1ActionPerformed
 
     private void txt_ipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_ipActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_ipActionPerformed
+
+    private void btn_chs2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs2ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs3.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs4.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs5.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs6.setEnabled(true);}
+            if (die1Result  == 5 || die2Result == 5 || die1Result + die2Result == 5){btn_chs7.setEnabled(true);}
+            if (die1Result  == 6 || die2Result == 6 || die1Result + die2Result == 6){btn_chs8.setEnabled(true);}
+            if (die1Result + die2Result == 7){btn_chs9.setEnabled(true);}
+            if (die1Result + die2Result == 8){btn_chs10.setEnabled(true);}
+            if (die1Result + die2Result == 9){btn_chs11.setEnabled(true);}
+            if (die1Result + die2Result == 10){btn_chs12.setEnabled(true);}
+            if (die1Result + die2Result == 11){btn_chs13.setEnabled(true);}
+            if (die1Result + die2Result == 12){btn_chs14.setEnabled(true);}
+        }
+        btn_chs2.setEnabled(false);
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs2ActionPerformed
+
+    private void btn_chs3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs3ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs4.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs5.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs6.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs7.setEnabled(true);}
+            if (die1Result  == 5 || die2Result == 5 || die1Result + die2Result == 5){btn_chs8.setEnabled(true);}
+            if (die1Result  == 6 || die2Result == 6 || die1Result + die2Result == 6){btn_chs9.setEnabled(true);}
+            if (die1Result + die2Result == 7){btn_chs10.setEnabled(true);}
+            if (die1Result + die2Result == 8){btn_chs11.setEnabled(true);}
+            if (die1Result + die2Result == 9){btn_chs12.setEnabled(true);}
+            if (die1Result + die2Result == 10){btn_chs13.setEnabled(true);}
+            if (die1Result + die2Result == 11){btn_chs14.setEnabled(true);}
+            if (die1Result + die2Result == 12){btn_chs15.setEnabled(true);}
+        }
+        btn_chs3.setEnabled(false);
+        
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs3ActionPerformed
+
+    private void btn_chs4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs4ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs5.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs6.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs7.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs8.setEnabled(true);}
+            if (die1Result  == 5 || die2Result == 5 || die1Result + die2Result == 5){btn_chs9.setEnabled(true);}
+            if (die1Result  == 6 || die2Result == 6 || die1Result + die2Result == 6){btn_chs10.setEnabled(true);}
+            if (die1Result + die2Result == 7){btn_chs11.setEnabled(true);}
+            if (die1Result + die2Result == 8){btn_chs12.setEnabled(true);}
+            if (die1Result + die2Result == 9){btn_chs13.setEnabled(true);}
+            if (die1Result + die2Result == 10){btn_chs14.setEnabled(true);}
+            if (die1Result + die2Result == 11){btn_chs15.setEnabled(true);}
+            if (die1Result + die2Result == 12){btn_chs16.setEnabled(true);}
+        }
+        btn_chs4.setEnabled(false);
+        
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs4ActionPerformed
+
+    private void btn_chs5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs5ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs6.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs7.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs8.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs9.setEnabled(true);}
+            if (die1Result  == 5 || die2Result == 5 || die1Result + die2Result == 5){btn_chs10.setEnabled(true);}
+            if (die1Result  == 6 || die2Result == 6 || die1Result + die2Result == 6){btn_chs11.setEnabled(true);}
+            if (die1Result + die2Result == 7){btn_chs12.setEnabled(true);}
+            if (die1Result + die2Result == 8){btn_chs13.setEnabled(true);}
+            if (die1Result + die2Result == 9){btn_chs14.setEnabled(true);}
+            if (die1Result + die2Result == 10){btn_chs15.setEnabled(true);}
+            if (die1Result + die2Result == 11){btn_chs16.setEnabled(true);}
+            if (die1Result + die2Result == 12){btn_chs17.setEnabled(true);}
+        }
+        btn_chs5.setEnabled(false);
+        
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs5ActionPerformed
+
+    private void btn_chs6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs6ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs7.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs8.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs9.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs10.setEnabled(true);}
+            if (die1Result  == 5 || die2Result == 5 || die1Result + die2Result == 5){btn_chs11.setEnabled(true);}
+            if (die1Result  == 6 || die2Result == 6 || die1Result + die2Result == 6){btn_chs12.setEnabled(true);}
+            if (die1Result + die2Result == 7){btn_chs13.setEnabled(true);}
+            if (die1Result + die2Result == 8){btn_chs14.setEnabled(true);}
+            if (die1Result + die2Result == 9){btn_chs15.setEnabled(true);}
+            if (die1Result + die2Result == 10){btn_chs16.setEnabled(true);}
+            if (die1Result + die2Result == 11){btn_chs17.setEnabled(true);}
+            if (die1Result + die2Result == 12){btn_chs18.setEnabled(true);}
+        }
+        btn_chs6.setEnabled(false);
+        
+        clickCounter++;
+        
+    }//GEN-LAST:event_btn_chs6ActionPerformed
+
+    private void btn_chs7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs7ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs8.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs9.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs10.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs11.setEnabled(true);}
+            if (die1Result  == 5 || die2Result == 5 || die1Result + die2Result == 5){btn_chs12.setEnabled(true);}
+            if (die1Result  == 6 || die2Result == 6 || die1Result + die2Result == 6){btn_chs13.setEnabled(true);}
+            if (die1Result + die2Result == 7){btn_chs14.setEnabled(true);}
+            if (die1Result + die2Result == 8){btn_chs15.setEnabled(true);}
+            if (die1Result + die2Result == 9){btn_chs16.setEnabled(true);}
+            if (die1Result + die2Result == 10){btn_chs17.setEnabled(true);}
+            if (die1Result + die2Result == 11){btn_chs18.setEnabled(true);}
+            if (die1Result + die2Result == 12){btn_chs19.setEnabled(true);}
+        }
+        btn_chs7.setEnabled(false);
+        
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs7ActionPerformed
+
+    private void btn_chs8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs8ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs9.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs10.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs11.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs12.setEnabled(true);}
+            if (die1Result  == 5 || die2Result == 5 || die1Result + die2Result == 5){btn_chs13.setEnabled(true);}
+            if (die1Result  == 6 || die2Result == 6 || die1Result + die2Result == 6){btn_chs14.setEnabled(true);}
+            if (die1Result + die2Result == 7){btn_chs15.setEnabled(true);}
+            if (die1Result + die2Result == 8){btn_chs16.setEnabled(true);}
+            if (die1Result + die2Result == 9){btn_chs17.setEnabled(true);}
+            if (die1Result + die2Result == 10){btn_chs18.setEnabled(true);}
+            if (die1Result + die2Result == 11){btn_chs19.setEnabled(true);}
+            if (die1Result + die2Result == 12){btn_chs20.setEnabled(true);}
+        }
+        btn_chs8.setEnabled(false);
+        
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs8ActionPerformed
+
+    private void btn_chs9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs9ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs10.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs11.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs12.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs13.setEnabled(true);}
+            if (die1Result  == 5 || die2Result == 5 || die1Result + die2Result == 5){btn_chs14.setEnabled(true);}
+            if (die1Result  == 6 || die2Result == 6 || die1Result + die2Result == 6){btn_chs15.setEnabled(true);}
+            if (die1Result + die2Result == 7){btn_chs16.setEnabled(true);}
+            if (die1Result + die2Result == 8){btn_chs17.setEnabled(true);}
+            if (die1Result + die2Result == 9){btn_chs18.setEnabled(true);}
+            if (die1Result + die2Result == 10){btn_chs19.setEnabled(true);}
+            if (die1Result + die2Result == 11){btn_chs20.setEnabled(true);}
+            if (die1Result + die2Result == 12){btn_chs21.setEnabled(true);}
+        }
+        btn_chs9.setEnabled(false);
+        
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs9ActionPerformed
+
+    private void btn_chs10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs10ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs11.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs12.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs13.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs14.setEnabled(true);}
+            if (die1Result  == 5 || die2Result == 5 || die1Result + die2Result == 5){btn_chs15.setEnabled(true);}
+            if (die1Result  == 6 || die2Result == 6 || die1Result + die2Result == 6){btn_chs16.setEnabled(true);}
+            if (die1Result + die2Result == 7){btn_chs17.setEnabled(true);}
+            if (die1Result + die2Result == 8){btn_chs18.setEnabled(true);}
+            if (die1Result + die2Result == 9){btn_chs19.setEnabled(true);}
+            if (die1Result + die2Result == 10){btn_chs20.setEnabled(true);}
+            if (die1Result + die2Result == 11){btn_chs21.setEnabled(true);}
+            if (die1Result + die2Result == 12){btn_chs22.setEnabled(true);}
+        }
+        btn_chs10.setEnabled(false);
+        
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs10ActionPerformed
+
+    private void btn_chs11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs11ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs12.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs13.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs14.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs15.setEnabled(true);}
+            if (die1Result  == 5 || die2Result == 5 || die1Result + die2Result == 5){btn_chs16.setEnabled(true);}
+            if (die1Result  == 6 || die2Result == 6 || die1Result + die2Result == 6){btn_chs17.setEnabled(true);}
+            if (die1Result + die2Result == 7){btn_chs18.setEnabled(true);}
+            if (die1Result + die2Result == 8){btn_chs19.setEnabled(true);}
+            if (die1Result + die2Result == 9){btn_chs20.setEnabled(true);}
+            if (die1Result + die2Result == 10){btn_chs21.setEnabled(true);}
+            if (die1Result + die2Result == 11){btn_chs22.setEnabled(true);}
+            if (die1Result + die2Result == 12){btn_chs23.setEnabled(true);}
+        }
+        btn_chs11.setEnabled(false);
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs11ActionPerformed
+
+    private void btn_chs12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs12ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs13.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs14.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs15.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs16.setEnabled(true);}
+            if (die1Result  == 5 || die2Result == 5 || die1Result + die2Result == 5){btn_chs17.setEnabled(true);}
+            if (die1Result  == 6 || die2Result == 6 || die1Result + die2Result == 6){btn_chs18.setEnabled(true);}
+            if (die1Result + die2Result == 7){btn_chs19.setEnabled(true);}
+            if (die1Result + die2Result == 8){btn_chs20.setEnabled(true);}
+            if (die1Result + die2Result == 9){btn_chs21.setEnabled(true);}
+            if (die1Result + die2Result == 10){btn_chs22.setEnabled(true);}
+            if (die1Result + die2Result == 11){btn_chs23.setEnabled(true);}
+            if (die1Result + die2Result == 12){btn_chs24.setEnabled(true);}
+        }
+        btn_chs12.setEnabled(false);
+        
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs12ActionPerformed
+
+    private void btn_chs13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs13ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs14.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs15.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs16.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs17.setEnabled(true);}
+            if (die1Result  == 5 || die2Result == 5 || die1Result + die2Result == 5){btn_chs18.setEnabled(true);}
+            if (die1Result  == 6 || die2Result == 6 || die1Result + die2Result == 6){btn_chs19.setEnabled(true);}
+            if (die1Result + die2Result == 7){btn_chs20.setEnabled(true);}
+            if (die1Result + die2Result == 8){btn_chs21.setEnabled(true);}
+            if (die1Result + die2Result == 9){btn_chs22.setEnabled(true);}
+            if (die1Result + die2Result == 10){btn_chs23.setEnabled(true);}
+            if (die1Result + die2Result == 11){btn_chs24.setEnabled(true);}
+        }
+        btn_chs13.setEnabled(false);
+        
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs13ActionPerformed
+
+    private void btn_chs14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs14ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs15.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs16.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs17.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs18.setEnabled(true);}
+            if (die1Result  == 5 || die2Result == 5 || die1Result + die2Result == 5){btn_chs19.setEnabled(true);}
+            if (die1Result  == 6 || die2Result == 6 || die1Result + die2Result == 6){btn_chs20.setEnabled(true);}
+            if (die1Result + die2Result == 7){btn_chs21.setEnabled(true);}
+            if (die1Result + die2Result == 8){btn_chs22.setEnabled(true);}
+            if (die1Result + die2Result == 9){btn_chs23.setEnabled(true);}
+            if (die1Result + die2Result == 10){btn_chs24.setEnabled(true);}
+        }
+        btn_chs14.setEnabled(false);       
+        
+        clickCounter++;   
+    }//GEN-LAST:event_btn_chs14ActionPerformed
+
+    private void btn_chs15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs15ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs16.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs17.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs18.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs19.setEnabled(true);}
+            if (die1Result  == 5 || die2Result == 5 || die1Result + die2Result == 5){btn_chs20.setEnabled(true);}
+            if (die1Result  == 6 || die2Result == 6 || die1Result + die2Result == 6){btn_chs21.setEnabled(true);}
+            if (die1Result + die2Result == 7){btn_chs22.setEnabled(true);}
+            if (die1Result + die2Result == 8){btn_chs23.setEnabled(true);}
+            if (die1Result + die2Result == 9){btn_chs24.setEnabled(true);}
+        }
+        btn_chs15.setEnabled(false);       
+        
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs15ActionPerformed
+
+    private void btn_chs16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs16ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs17.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs18.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs19.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs20.setEnabled(true);}
+            if (die1Result  == 5 || die2Result == 5 || die1Result + die2Result == 5){btn_chs21.setEnabled(true);}
+            if (die1Result  == 6 || die2Result == 6 || die1Result + die2Result == 6){btn_chs22.setEnabled(true);}
+            if (die1Result + die2Result == 7){btn_chs23.setEnabled(true);}
+            if (die1Result + die2Result == 8){btn_chs24.setEnabled(true);}
+        }
+        btn_chs16.setEnabled(false);       
+        
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs16ActionPerformed
+
+    private void btn_chs17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs17ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs18.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs19.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs20.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs21.setEnabled(true);}
+            if (die1Result  == 5 || die2Result == 5 || die1Result + die2Result == 5){btn_chs22.setEnabled(true);}
+            if (die1Result  == 6 || die2Result == 6 || die1Result + die2Result == 6){btn_chs23.setEnabled(true);}
+            if (die1Result + die2Result == 7){btn_chs24.setEnabled(true);}
+        }
+        btn_chs17.setEnabled(false);      
+        
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs17ActionPerformed
+
+    private void btn_chs18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs18ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs19.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs20.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs21.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs22.setEnabled(true);}
+            if (die1Result  == 5 || die2Result == 5 || die1Result + die2Result == 5){btn_chs23.setEnabled(true);}
+            if (die1Result  == 6 || die2Result == 6 || die1Result + die2Result == 6){btn_chs24.setEnabled(true);}
+        }
+        btn_chs18.setEnabled(false);       
+        
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs18ActionPerformed
+
+    private void btn_chs19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs19ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs20.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs21.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs22.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs23.setEnabled(true);}
+            if (die1Result  == 5 || die2Result == 5 || die1Result + die2Result == 5){btn_chs24.setEnabled(true);}
+        }
+        btn_chs19.setEnabled(false);       
+        
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs19ActionPerformed
+
+    private void btn_chs20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs20ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs21.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs22.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs23.setEnabled(true);}
+            if (die1Result  == 4 || die2Result == 4 || die1Result + die2Result == 4){btn_chs24.setEnabled(true);}
+        }
+        btn_chs20.setEnabled(false);       
+        
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs20ActionPerformed
+
+    private void btn_chs21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs21ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs22.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs23.setEnabled(true);}
+            if (die1Result  == 3 || die2Result == 3 || die1Result + die2Result == 3){btn_chs24.setEnabled(true);}
+        }
+        btn_chs21.setEnabled(false);       
+        
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs21ActionPerformed
+
+    private void btn_chs22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs22ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        if (clickCounter == 0) {
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs23.setEnabled(true);}
+            if (die1Result  == 2 || die2Result == 2 || die1Result + die2Result == 2){btn_chs24.setEnabled(true);}
+        }
+        btn_chs22.setEnabled(false); 
+        
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs22ActionPerformed
+
+    private void btn_chs23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chs23ActionPerformed
+        // TODO add your handling code here:
+        if (clickCounter == 0){deactivateButtons();}        // just at first click
+        if (clickCounter == 0) { 
+            if (die1Result  == 1 || die2Result == 1)                                {btn_chs24.setEnabled(true);}
+        }
+        btn_chs23.setEnabled(false);
+        
+        clickCounter++;
+    }//GEN-LAST:event_btn_chs23ActionPerformed
 
     /**
      * @param args the command line arguments
