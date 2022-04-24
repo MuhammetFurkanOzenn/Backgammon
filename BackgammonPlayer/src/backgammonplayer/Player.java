@@ -60,10 +60,19 @@ class Listen extends Thread {
                         Game.ThisGame.makeThemEnabled();
                         break;
                     case Selected:
-                        //Game.ThisGame.RivalSelection = (int) received.content;
+                        // This one is White team
+                        Game.ThisGame.team="w";
                         // ENABLE YOUR TURN
                         Game.ThisGame.makeThemEnabled();
                         Game.ThisGame.txt_receive.setText("WE'LL BEGIN WITH U MATE!");
+                        break;
+                    case Selected2:
+                        //Game.ThisGame.RivalSelection = (int) received.content;
+                        // ENABLE YOUR TURN
+                        //Game.ThisGame.makeThemEnabled();
+                        // This one is black team
+                        Game.ThisGame.team="b";
+                        Game.ThisGame.txt_receive.setText("Hello Second Player!");
                         break;
 
                     case Bitis:

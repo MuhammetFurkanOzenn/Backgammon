@@ -103,6 +103,10 @@ public class SClient extends Thread{
                             //gelen seçim yapıldı mesajını rakibe gönder
                             Server.Send(TheClient.rival, received);
                             break;
+                        case Selected2:
+                            //gelen seçim yapıldı mesajını rakibe gönder
+                            Server.Send(TheClient.rival, received);
+                            break;
                         case Bitis:
                             break;
 
@@ -179,9 +183,9 @@ public class SClient extends Thread{
                         msg3.content = TheClient.name;
                         Server.Send(TheClient.rival, msg3);
                         
-                        /*Message msg4 = new Message(Message.Message_Type.Selected);
+                        Message msg4 = new Message(Message.Message_Type.Selected2);
                         msg4.content = TheClient.rival.name;
-                        Server.Send(TheClient.rival, msg4);*/
+                        Server.Send(TheClient, msg4);
                     }
                     //lock mekanizmasını servest bırak
                     //bırakılmazsa deadlock olur.

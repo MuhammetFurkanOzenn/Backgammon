@@ -35,6 +35,7 @@ public class Game extends javax.swing.JFrame {
     
     //GAME LOGIC
     //*
+    public String team;    // "b" or "w"
     public int[] arrayBlack = {-1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 3, 0, 5, 0, 0, 0, 0, 0};     // 1'st player's checkers
     public int[] arrayWhite = {-1, 0, 0, 0, 0, 0, 5, 0, 3, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2};     // 2'nd player's checkers
    // public javax.swing.JLabel[] arrayLabels = {lbl_noC1};
@@ -1244,7 +1245,15 @@ public class Game extends javax.swing.JFrame {
         
         // Activate Choose Buttons
         //activateButtons();
-        activateButtonsBlack();
+        
+        if (team == "b"){
+            activateButtonsBlack();
+        }else if (team == "w"){
+            activateButtonsWhite();
+        }else{
+            System.out.println("There is something wrong mate!! Team is not b either w");     
+        }
+        
         // rand 0-6 two times
         Random rand = new Random();
         // it will return 0-5 random numbers
