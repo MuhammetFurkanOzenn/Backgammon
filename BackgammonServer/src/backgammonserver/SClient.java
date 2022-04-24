@@ -178,6 +178,10 @@ public class SClient extends Thread{
                         Message msg3 = new Message(Message.Message_Type.Selected);
                         msg3.content = TheClient.name;
                         Server.Send(TheClient.rival, msg3);
+                        
+                        /*Message msg4 = new Message(Message.Message_Type.Selected);
+                        msg4.content = TheClient.rival.name;
+                        Server.Send(TheClient.rival, msg4);*/
                     }
                     //lock mekanizmasını servest bırak
                     //bırakılmazsa deadlock olur.
