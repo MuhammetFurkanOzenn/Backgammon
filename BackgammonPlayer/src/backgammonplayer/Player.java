@@ -56,11 +56,14 @@ class Listen extends Thread {
                     case Die2:
                         Game.ThisGame.lbl_die2.setText(received.content.toString());
                         break;
+                    case Turn:
+                        Game.ThisGame.makeThemEnabled();
+                        break;
                     case Selected:
                         //Game.ThisGame.RivalSelection = (int) received.content;
                         // ENABLE YOUR TURN
                         Game.ThisGame.makeThemEnabled();
-                        Game.ThisGame.txt_receive.setText(received.content.toString());
+                        Game.ThisGame.txt_receive.setText("WE'LL BEGIN WITH U MATE!");
                         break;
 
                     case Bitis:

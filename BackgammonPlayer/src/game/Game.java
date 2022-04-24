@@ -354,13 +354,20 @@ public class Game extends javax.swing.JFrame {
         // TODO add your handling code here:
         /*
             THERE IS A LOCK SYSTEM LIKE SEMAPHORE 
-            EACH TOUR THE LOCK WILL BE FALSE 
+            EACH TOUR THE LOCK WILL BE FALSE when CLICK END OF TOUR BUTTON 
+            
             WHEN THE BUTTON CLICK, OTHER PLAYERS LOCK WILL BE TRUE
-            SO THE GAME WILL BE TURNED-BASED.. BRILLIANT:)
+            SO THE GAME WILL BE TURNED-BASED... BRILLIANT :)
         */
         
         btn_endTour.setEnabled(false);
         makeThemDisabled();
+        
+        // send something to activate other player's actions
+        Message msg = new Message(Message.Message_Type.Turn);
+        msg.content = "helloo"; // Not neccessary to send this
+        Player.Send(msg);
+        
     }//GEN-LAST:event_btn_endTourActionPerformed
 
     /**

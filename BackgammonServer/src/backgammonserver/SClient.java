@@ -96,6 +96,9 @@ public class SClient extends Thread{
                         case Die2:
                             Server.Send(TheClient.rival, received);
                             break;
+                        case Turn:
+                            Server.Send(TheClient.rival, received);
+                            break;
                         case Selected:
                             //gelen seçim yapıldı mesajını rakibe gönder
                             Server.Send(TheClient.rival, received);
